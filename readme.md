@@ -66,6 +66,7 @@ RankLib is a library for comparing different ranking algorithms. In the current 
 Usage: java -jar RankLib.jar <Params>
 Params:
   [+] Training (+ tuning and evaluation)
+```
 	-train <file>		Training data
 	-ranker <type>		Specify which ranking algorithm to use
 				0: MART (gradient boosted regression tree)
@@ -137,8 +138,9 @@ Params:
 	[ -shrinkage <factor> ]	Shrinkage, or learning rate (default=0.1)
 	[ -tc <k> ]		Number of threshold candidates for tree spliting. -1 to use all feature values (default=256)
 	[ -mls <n> ]		Min leaf support -- minimum #samples each leaf has to contain (default=1)
-
+```
   [+] Testing previously saved models
+```
 	-load <model>		The model to load
 	-test <file>		Test data to evaluate the model (specify either this or -rank but not both)
 	-rank <file>		Rank the samples in the specified file (specify either this or -test but not both)
@@ -147,7 +149,7 @@ Params:
 	[ -score <file>]	Store ranker's score for each object being ranked (has to be used with -rank)
 	[ -idv ]		Print model performance (in test metric) on individual ranked lists (has to be used with -test)
 	[ -norm ]		Normalize feature vectors (similar to -norm for training/tuning)
-
+```
 2.2. Build
 An ant xml config. file is included. Make sure you have ant on your machine. Just type "ant" and you are good to go.
 
@@ -156,15 +158,17 @@ An ant xml config. file is included. Make sure you have ant on your machine. Jus
 
 The file format of the training and test and validation files is the same as for SVM-Rank (http://www.cs.cornell.edu/People/tj/svm_light/svm_rank.html). This is also the format used in the LETOR datasets. Each of the following lines represents one training example and is of the following format:
 
+```
 <line> .=. <target> qid:<qid> <feature>:<value> <feature>:<value> ... <feature>:<value> # <info>
 <target> .=. <float>
 <qid> .=. <positive integer>
 <feature> .=. <positive integer>
 <value> .=. <float>
 <info> .=. <string>
+```
 
 Here's an example: (taken from the SVM-Rank website). Note that everything after "#" are discarded.
-
+```
 3 qid:1 1:1 2:1 3:0 4:0.2 5:0 # 1A
 2 qid:1 1:0 2:0 3:1 4:0.1 5:1 # 1B 
 1 qid:1 1:0 2:1 3:0 4:0.4 5:0 # 1C
@@ -177,5 +181,4 @@ Here's an example: (taken from the SVM-Rank website). Note that everything after
 3 qid:3 1:1 2:1 3:0 4:0.3 5:0 # 3B 
 4 qid:3 1:1 2:0 3:0 4:0.4 5:1 # 3C 
 1 qid:3 1:0 2:1 3:1 4:0.5 5:0 # 3D
-
-
+```
