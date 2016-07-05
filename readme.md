@@ -1,9 +1,8 @@
-Author:	Van Dang (vdang@cs.umass.edu)
-Date:		July, 2012.
-Version:	2.1
-======================================
+- Author:	Van Dang (vdang@cs.umass.edu)
+- Date:		July, 2012.
+- Version:	2.1
 
-WHAT'S NEW
+## WHAT'S NEW
 - Add ListNet.
 - Add Random Forest.
 - With little manual work, it can do BagBoo/Bagging LambaMART too.
@@ -12,9 +11,7 @@ WHAT'S NEW
   (2) output ranking in indri run file format (not exposed via cmd parameters) [-indri][requires doc-ID stored for each feature vector]
   (3) ignore ranked list without any relevant document [-hr]
 
-========================
-v 2.0
-------
+### v 2.0
 - Add MART
 - Add LambdaMART
 - Change the calculation of NDCG to the standard version: (2^{rel_i} - 1) / log_{2} (i+1). Therefore, the absolute NDCG score might be slightly lower than before.
@@ -26,27 +23,24 @@ v 2.0
 - Some cmd-line parameter string have been changed.
 - Internal code clean up for slight improvement in efficiency/speed.
 
-========================
-v 1.2.1
+### v 1.2.1
 ------
 - Fix the error with sparse train/test/validate file (with v 1.1, when we do not specify feature whose value is 0, the system crashes in some cases)
 - Speedup RankNet using batch learning + add some tricks (see the LambdaRank paper for details).
 - Change default epochs to 50 for RankNet.
 - Fix a bug related to RankBoost not dealing properly with features whose values are negative.
 
-========================
-v 1.1
+### v 1.1
 ------
 - Change data types in some classes to reduce the amount of memory use. Thus this version can work with larger dataset.
 - Rearrange packages
 - Change some functions' name
 
-========================
-v 1.0
+### v 1.0
 ------
 This is the first version of RankLib.
 
-======================================
+
 1. OVERVIEW
 
 RankLib is a library for comparing different ranking algorithms. In the current version:
@@ -59,7 +53,6 @@ RankLib is a library for comparing different ranking algorithms. In the current 
    + ...
 - Evaluation metrics: MAP, NDCG@k, DCG@k, P@k, RR@k, ERR@k
 
-===============================================================================================================================================
 2. HOW TO USE
 
 2.1. Binary
@@ -153,7 +146,6 @@ Params:
 2.2. Build
 An ant xml config. file is included. Make sure you have ant on your machine. Just type "ant" and you are good to go.
 
-==================================================================
 3. FILE FORMAT (TRAIN/TEST/VALIDATION)
 
 The file format of the training and test and validation files is the same as for SVM-Rank (http://www.cs.cornell.edu/People/tj/svm_light/svm_rank.html). This is also the format used in the LETOR datasets. Each of the following lines represents one training example and is of the following format:
